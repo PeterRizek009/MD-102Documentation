@@ -1,4 +1,11 @@
-export const sections = [
+const sections = [
+{
+category: "Deployment",
+topics: [
+{ title: "On-Premise Deployment", path: "/deployment/on-premise" },
+{ title: "Autopilot", path: "/deployment/autopilot" },
+],
+},
 {
 category: "Identity",
 topics: [
