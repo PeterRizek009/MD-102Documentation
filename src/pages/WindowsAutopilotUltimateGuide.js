@@ -1,138 +1,206 @@
 import React from "react";
 
-export default function WindowsAutopilotUltimateGuide() {
+export default function WindowsAutopilotEngineerRunbook() {
   return (
-    <div className="min-h-screen bg-white">
-      <div className="max-w-6xl mx-auto px-6 py-12">
+    <div className="min-h-screen bg-gray-50 py-12 px-6">
+      <div className="max-w-6xl mx-auto bg-white shadow-xl rounded-2xl p-10">
 
-        <h1 className="text-4xl font-bold mb-3">
-          📘 Windows Autopilot – Ultimate Deployment Guide
+        {/* HEADER */}
+        <h1 className="text-4xl font-bold mb-4">
+          Windows Autopilot — Engineer Runbook
         </h1>
 
-        <p className="text-gray-500 mb-12">
-          Zero Touch | Modern Provisioning | Architecture | Troubleshooting | Enterprise Deployment
+        <p className="text-gray-500 mb-10">
+          Zero Touch Deployment • Modern Provisioning • Intune • Entra Join
         </p>
 
-        <section className="prose prose-lg max-w-none mb-16">
-
-          <h2>🔹 What is Windows Autopilot?</h2>
+        {/* MINDSET */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">🔥 Engineer Mindset</h2>
 
           <p>
-            Windows Autopilot هو Modern Deployment solution بيسمح لك تجهز الأجهزة
-            بدون Imaging أو Touch من IT.
+            Autopilot هدفه يموت حاجة اسمها Imaging.
           </p>
 
-          <blockquote>
-            Device ships → User logs in → Everything configures automatically.
-          </blockquote>
+          <div className="bg-blue-50 border p-5 rounded-xl mt-4 font-semibold">
+            Ship device → User logs in → Device configures automatically
+          </div>
 
-          <h3>Business Value</h3>
-
-          <ul>
-            <li>Zero-touch provisioning</li>
-            <li>No custom images</li>
-            <li>Remote workforce ready</li>
-            <li>خفض IT workload</li>
-          </ul>
-
+          <p className="mt-4">
+            مفيش USB…  
+            مفيش MDT…  
+            مفيش IT يلمس الجهاز.
+          </p>
         </section>
 
-        {/* MODES TABLE */}
-        <h2 className="text-2xl font-bold mb-4">
-          🔥 Autopilot Deployment Modes
-        </h2>
+        {/* WHY AUTOPILOT */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">🚀 Why Companies Love Autopilot</h2>
 
-        <div className="overflow-x-auto mb-16">
-          <table className="w-full border text-sm">
-            <thead className="bg-gray-100">
-              <tr>
-                <th className="border p-3">Mode</th>
-                <th className="border">Use Case</th>
-                <th className="border">Touch Level</th>
-              </tr>
-            </thead>
-
-            <tbody className="text-center">
-
-              <tr>
-                <td className="border p-2 font-semibold">User-Driven</td>
-                <td className="border">Corporate laptops</td>
-                <td className="border">Low</td>
-              </tr>
-
-              <tr>
-                <td className="border p-2 font-semibold">Self-Deploying</td>
-                <td className="border">Kiosk / Shared</td>
-                <td className="border">Zero</td>
-              </tr>
-
-              <tr>
-                <td className="border p-2 font-semibold">Pre-Provisioning</td>
-                <td className="border">Speed up setup</td>
-                <td className="border">Handled by IT/OEM</td>
-              </tr>
-
-              <tr>
-                <td className="border p-2 font-semibold">Hybrid</td>
-                <td className="border">On-prem AD companies</td>
-                <td className="border">Medium</td>
-              </tr>
-
-            </tbody>
-          </table>
-        </div>
-
-        <section className="prose prose-lg max-w-none">
-
-          <h2>🔹 Core Components</h2>
-
-          <ul>
-            <li>Hardware Hash</li>
-            <li>Autopilot Profile</li>
-            <li>Enrollment Status Page (ESP)</li>
-            <li>Entra Join</li>
-            <li>Intune Enrollment</li>
+          <ul className="list-disc ml-6 space-y-2">
+            <li>Zero-touch provisioning</li>
+            <li>Remote workforce ready</li>
+            <li>Reduce IT workload</li>
+            <li>No golden images</li>
+            <li>Cloud-first deployment</li>
           </ul>
+        </section>
 
-          <h2>🔥 Enrollment Status Page (ESP)</h2>
+        {/* ARCHITECTURE */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">🏗️ Autopilot Architecture</h2>
+
+          <div className="bg-gray-100 p-6 rounded-xl font-semibold">
+            Device Hardware Hash → Autopilot Service → Entra ID → Intune →
+            Policies + Apps
+          </div>
+        </section>
+
+        {/* MODES */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">🔥 Deployment Modes</h2>
+
+          <div className="overflow-x-auto">
+            <table className="w-full border">
+              <thead className="bg-gray-200">
+                <tr>
+                  <th className="p-3 border">Mode</th>
+                  <th className="border">Best For</th>
+                  <th className="border">Engineer Verdict</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr className="text-center">
+                  <td className="border p-3 font-semibold">User-Driven</td>
+                  <td className="border">Corporate laptops</td>
+                  <td className="border text-green-600 font-semibold">
+                    ⭐ Most Common
+                  </td>
+                </tr>
+
+                <tr className="text-center">
+                  <td className="border p-3 font-semibold">Self Deploying</td>
+                  <td className="border">Kiosk / Shared devices</td>
+                  <td className="border">Zero user interaction</td>
+                </tr>
+
+                <tr className="text-center">
+                  <td className="border p-3 font-semibold">Pre-Provisioning</td>
+                  <td className="border">Speed deployments</td>
+                  <td className="border text-purple-600">
+                    ⭐ Engineer Favorite
+                  </td>
+                </tr>
+
+                <tr className="text-center">
+                  <td className="border p-3 font-semibold">Hybrid</td>
+                  <td className="border">Legacy AD companies</td>
+                  <td className="border text-yellow-600">
+                    Avoid if possible
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* ESP */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">
+            🔐 Enrollment Status Page (ESP)
+          </h2>
 
           <p>
-            تمنع المستخدم من الوصول للجهاز قبل تثبيت:
+            ESP بيمنع المستخدم من دخول الجهاز قبل ما:
           </p>
 
-          <ul>
-            <li>Critical apps</li>
-            <li>Security policies</li>
+          <ul className="list-disc ml-6 mt-3 space-y-2">
+            <li>Security policies apply</li>
+            <li>Critical apps install</li>
           </ul>
 
-          <blockquote>
-            ⭐ ESP = Secure first boot.
-          </blockquote>
+          <div className="bg-red-50 border mt-4 p-4 rounded-xl font-semibold">
+            بدون ESP → User ممكن يدخل جهاز غير مؤمن.
+          </div>
+        </section>
 
-          <h2>🔹 Best Practices</h2>
+        {/* DESIGN DECISIONS */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">
+            🧠 Engineer Design Decisions
+          </h2>
 
-          <ul>
-            <li>Always use ESP</li>
-            <li>Deploy apps in phases</li>
-            <li>Test with pilot devices</li>
+          <ul className="list-disc ml-6 space-y-2">
+            <li>Cloud-first؟ → Entra Join</li>
+            <li>Deploy apps during ESP carefully</li>
+            <li>Use pilot devices first</li>
+            <li>Avoid installing heavy apps in ESP</li>
           </ul>
+        </section>
 
-          <h2>🔥 Troubleshooting</h2>
+        {/* NETWORK */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">
+            🌐 Network Requirements
+          </h2>
 
-          <ul>
-            <li>Check device registered</li>
-            <li>Verify profile assigned</li>
-            <li>Ensure internet access</li>
-            <li>Review ESP logs</li>
+          <ul className="list-disc ml-6 space-y-2">
+            <li>Open Microsoft endpoints</li>
+            <li>Avoid SSL inspection</li>
+            <li>Stable internet required</li>
           </ul>
+        </section>
 
-          <h2>🎯 Interview Answer</h2>
+        {/* MISTAKES */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4 text-red-600">
+            ☠️ Critical Mistakes
+          </h2>
 
-          <blockquote>
-            “I deploy devices using Windows Autopilot to enable zero-touch provisioning,
-            enforce security via ESP, and automate application deployment through Intune.”
-          </blockquote>
+          <ul className="list-disc ml-6 space-y-2">
+            <li>Deploying too many apps in ESP</li>
+            <li>No pilot testing</li>
+            <li>Bad network</li>
+            <li>Forgetting device registration</li>
+          </ul>
+        </section>
 
+        {/* TROUBLESHOOTING */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">
+            🛠️ Troubleshooting Flow
+          </h2>
+
+          <div className="bg-gray-100 p-5 rounded-xl font-semibold">
+            Device registered? → Profile assigned? → Internet OK? →
+            ESP stuck? → Check logs
+          </div>
+        </section>
+
+        {/* SCENARIO */}
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">
+            🔥 Real Enterprise Scenario
+          </h2>
+
+          <p>
+            شركة بتشحن لابتوبات للموظفين فى بيوتهم.
+          </p>
+
+          <p className="mt-2">
+            الموظف يفتح الجهاز → يدخل credentials →
+            الجهاز يعمل Entra Join →
+            Intune ينزل policies →
+            apps تتثبت →
+            الجهاز يبقى compliant.
+          </p>
+
+          <div className="bg-green-50 border mt-4 p-5 rounded-xl font-semibold">
+            IT never touched the device.
+          </div>
         </section>
 
       </div>
