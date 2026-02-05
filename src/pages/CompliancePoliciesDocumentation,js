@@ -1,0 +1,300 @@
+import React from "react";
+
+export default function CompliancePoliciesDocumentation() {
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="max-w-6xl mx-auto px-6 py-12">
+
+        {/* HEADER */}
+        <h1 className="text-4xl font-bold mb-2">
+          📘 Compliance Policies – Microsoft Intune
+        </h1>
+
+        <p className="text-gray-500 mb-12">
+          Ultimate Administrator Documentation | Architecture | Monitoring | Troubleshooting | MD-102 + Interview Ready
+        </p>
+
+        {/* OVERVIEW */}
+        <section className="prose prose-lg max-w-none mb-16">
+          <h2>🔹 1) Overview</h2>
+
+          <p>
+            Compliance Policies فى Microsoft Intune هى الآلية التى تحدد إذا كان الجهاز:
+          </p>
+
+          <blockquote>
+            ✅ Trusted → مسموح له بالوصول  
+            ❌ Not Trusted → يتم منعه عبر Conditional Access
+          </blockquote>
+
+          <p>
+            الهدف الأساسى هو حماية بيانات الشركة عبر التأكد أن الأجهزة تلتزم بمعايير الأمان.
+          </p>
+
+          <h3>What Compliance Enables</h3>
+          <ul>
+            <li>Zero Trust Architecture</li>
+            <li>Secure access to Microsoft 365</li>
+            <li>Conditional Access enforcement</li>
+            <li>Risk reduction</li>
+            <li>Regulatory readiness</li>
+          </ul>
+
+          <blockquote>
+            🔥 بدون Compliance + Conditional Access → أى جهاز يقدر يدخل على بيانات الشركة.
+          </blockquote>
+        </section>
+
+        {/* HOW IT WORKS */}
+        <section className="prose prose-lg max-w-none mb-16">
+          <h2>🔹 2) How Compliance Works (Architecture Flow)</h2>
+
+          <ol>
+            <li>Device enrolls into Intune</li>
+            <li>Compliance policy is assigned</li>
+            <li>Device evaluates settings locally</li>
+            <li>Status sent to Intune</li>
+            <li>Conditional Access checks compliance</li>
+            <li>Access granted or blocked</li>
+          </ol>
+
+          <p>
+            يسمى هذا النموذج:
+            <strong> Device Trust Model</strong>
+          </p>
+        </section>
+
+        {/* STATE TABLE */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold mb-4">
+            🔹 Compliance States
+          </h2>
+
+          <div className="overflow-x-auto">
+            <table className="w-full border text-sm">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="border p-3">State</th>
+                  <th className="border">Meaning</th>
+                  <th className="border">Admin Action</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr className="text-center">
+                  <td className="border p-2 font-semibold">Compliant</td>
+                  <td className="border">Device meets security requirements</td>
+                  <td className="border">No action</td>
+                </tr>
+
+                <tr className="text-center">
+                  <td className="border p-2 font-semibold">Non-Compliant</td>
+                  <td className="border">Policy violation detected</td>
+                  <td className="border">Investigate immediately</td>
+                </tr>
+
+                <tr className="text-center">
+                  <td className="border p-2 font-semibold">In Grace Period</td>
+                  <td className="border">User has time to fix issue</td>
+                  <td className="border">Monitor</td>
+                </tr>
+
+                <tr className="text-center">
+                  <td className="border p-2 font-semibold">Not Evaluated</td>
+                  <td className="border">Device hasn’t checked in</td>
+                  <td className="border">Force sync</td>
+                </tr>
+
+                <tr className="text-center">
+                  <td className="border p-2 font-semibold">Error</td>
+                  <td className="border">Policy failed to apply</td>
+                  <td className="border">Check logs</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* PLATFORM SETTINGS */}
+        <section className="prose prose-lg max-w-none mb-16">
+          <h2>🔹 3) Compliance Settings by Platform</h2>
+
+          <h3>🪟 Windows</h3>
+          <ul>
+            <li>BitLocker required</li>
+            <li>Secure Boot enabled</li>
+            <li>TPM required</li>
+            <li>Minimum OS version</li>
+            <li>Microsoft Defender enabled</li>
+            <li>Firewall enabled</li>
+            <li>Password complexity</li>
+            <li>Require antivirus</li>
+          </ul>
+
+          <h3>🍎 iOS / iPadOS</h3>
+          <ul>
+            <li>Device not jailbroken</li>
+            <li>Minimum OS version</li>
+            <li>Password required</li>
+            <li>Encryption enforced</li>
+          </ul>
+
+          <h3>🤖 Android</h3>
+          <ul>
+            <li>Not rooted</li>
+            <li>Google Play Protect</li>
+            <li>Password rules</li>
+            <li>Minimum OS</li>
+          </ul>
+
+          <h3>🍏 macOS</h3>
+          <ul>
+            <li>FileVault enabled</li>
+            <li>Password required</li>
+            <li>Minimum OS</li>
+            <li>Firewall enabled</li>
+          </ul>
+        </section>
+
+        {/* CONDITIONAL ACCESS */}
+        <section className="prose prose-lg max-w-none mb-16">
+          <h2>🔥 4) Compliance + Conditional Access (Critical)</h2>
+
+          <blockquote>
+            Compliance alone does NOT block access.  
+            Conditional Access is the enforcement engine.
+          </blockquote>
+
+          <h3>Best Practice Policy</h3>
+          <ul>
+            <li>Users → All employees</li>
+            <li>Cloud apps → Office 365</li>
+            <li>Grant → Require device to be marked compliant</li>
+          </ul>
+
+          <p>
+            🔥 This is the foundation of <strong>Zero Trust</strong>.
+          </p>
+        </section>
+
+        {/* ASSIGNMENT */}
+        <section className="prose prose-lg max-w-none mb-16">
+          <h2>🔹 5) Assignment Strategy</h2>
+
+          <h3>Best Practice</h3>
+          <p>
+            Assign compliance to <strong>User Groups</strong> not devices.
+          </p>
+
+          <h3>Use Filters</h3>
+          <p>
+            Example:
+          </p>
+
+          <blockquote>
+            User Group = Finance  
+            Filter = Windows Corporate
+          </blockquote>
+
+          <p>
+            يقلل عدد السياسات ويمنع conflicts.
+          </p>
+        </section>
+
+        {/* ACTIONS */}
+        <section className="prose prose-lg max-w-none mb-16">
+          <h2>🔹 6) Actions for Noncompliance</h2>
+
+          <ul>
+            <li>Send email to user</li>
+            <li>Push notification</li>
+            <li>Mark device non-compliant</li>
+            <li>Block access via Conditional Access</li>
+          </ul>
+
+          <h3>Grace Period</h3>
+          <p>
+            يمكنك إعطاء المستخدم وقت لإصلاح المشكلة قبل الحظر.
+          </p>
+        </section>
+
+        {/* MONITORING */}
+        <section className="prose prose-lg max-w-none mb-16">
+          <h2>🔹 7) Monitoring (Daily Admin Routine)</h2>
+
+          <ul>
+            <li>Devices → Monitor → Device compliance</li>
+            <li>Check non-compliant devices</li>
+            <li>Investigate root cause</li>
+          </ul>
+
+          <p>
+            📌 Target Success Rate → 95%+
+          </p>
+        </section>
+
+        {/* TROUBLESHOOTING */}
+        <section className="prose prose-lg max-w-none mb-16">
+          <h2>🔥 8) Troubleshooting Runbook</h2>
+
+          <h3>Golden Questions</h3>
+          <ol>
+            <li>Is the device enrolled?</li>
+            <li>Did it check in?</li>
+            <li>Is the OS supported?</li>
+            <li>Is encryption enabled?</li>
+            <li>Any conflicting policies?</li>
+          </ol>
+
+          <h3>Top Failure Causes</h3>
+          <ul>
+            <li>Outdated OS</li>
+            <li>BitLocker/FileVault off</li>
+            <li>Device rooted/jailbroken</li>
+            <li>No password</li>
+            <li>Policy conflict</li>
+          </ul>
+        </section>
+
+        {/* BEST PRACTICES */}
+        <section className="prose prose-lg max-w-none mb-16">
+          <h2>🔹 9) Senior-Level Best Practices</h2>
+
+          <ul>
+            <li>Use one baseline policy per platform</li>
+            <li>Avoid policy sprawl</li>
+            <li>Always combine with Conditional Access</li>
+            <li>Test with pilot group first</li>
+            <li>Monitor continuously</li>
+          </ul>
+        </section>
+
+        {/* EXAM + INTERVIEW */}
+        <section className="prose prose-lg max-w-none">
+          <h2>🎯 MD-102 Exam Tips + Interview Answer</h2>
+
+          <h3>Common Exam Traps</h3>
+          <ul>
+            <li>Compliance alone does NOT block access</li>
+            <li>Conditional Access enforces compliance</li>
+            <li>BitLocker is critical for Windows</li>
+            <li>Jailbreak/root → noncompliant</li>
+          </ul>
+
+          <h3>Senior Interview Answer</h3>
+
+          <blockquote>
+            “I enforce device trust using compliance policies aligned with security baselines,
+            integrate them with Conditional Access for Zero Trust, assign via user groups with
+            filters, monitor compliance posture daily, and remediate non-compliant devices
+            through automated actions and root cause analysis.”
+          </blockquote>
+
+        </section>
+
+      </div>
+    </div>
+  );
+}
